@@ -10,8 +10,16 @@ import {
 export class OpenTelemetryTracer {
 	private t: Tracer;
 
-	constructor(name: string, version?: string) {
-		this.t = trace.getTracer(name, version);
+	constructor(tracer: Tracer);
+	constructor(name: string, version?: string);
+	constructor(arg1: string | Tracer, arg2?: string) {
+		if (typeof arg1 === "string") {
+			// name + optional version
+			this.t = trace.getTracer(arg1, arg2);
+		} else {
+			// existing Tracer instance
+			this.t = arg1;
+		}
 	}
 
 	startSpan(id: string, startTime: number): OpenTelemetrySpan {
