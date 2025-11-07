@@ -1,1 +1,1 @@
-# resonate-opentelemetry-ts
+# @resonatehq/opentelemetry
