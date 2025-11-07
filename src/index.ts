@@ -54,10 +54,6 @@ export class OpenTelemetrySpan {
 		this.s?.setAttribute(key, value);
 	}
 
-	// context(): SpanContext {
-	//   return new OpenTelemetrySpanContext(this.t, trace.setSpan(context.active(), this.s));
-	// }
-
 	end(endTime: number): void {
 		this.s?.end(endTime);
 	}
