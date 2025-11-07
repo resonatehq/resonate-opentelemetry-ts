@@ -3,6 +3,7 @@ import {
 	context,
 	propagation,
 	type Span,
+	SpanStatusCode,
 	type Tracer,
 	trace,
 } from "@opentelemetry/api";
@@ -12,13 +13,13 @@ export class OpenTelemetryTracer {
 
 	constructor(tracer: Tracer);
 	constructor(name: string, version?: string);
-	constructor(arg1: string | Tracer, arg2?: string) {
-		if (typeof arg1 === "string") {
+	constructor(tracerOrName: string | Tracer, version?: string) {
+		if (typeof tracerOrName === "string") {
 			// name + optional version
-			this.t = trace.getTracer(arg1, arg2);
+			this.t = trace.getTracer(tracerOrName, version);
 		} else {
 			// existing Tracer instance
-			this.t = arg1;
+			this.t = tracerOrName;
 		}
 	}
 
@@ -60,6 +61,13 @@ export class OpenTelemetrySpan {
 
 	setAttribute(key: string, value: string | number | boolean): void {
 		this.s?.setAttribute(key, value);
+	}
+
+	setStatus(success: boolean, message?: string): void {
+		this.s?.setStatus({
+			code: success ? SpanStatusCode.OK : SpanStatusCode.ERROR,
+			message,
+		});
 	}
 
 	end(endTime: number): void {

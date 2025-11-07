@@ -1,40 +1,40 @@
 {
-	"name": "@resonatehq/opentelemetry",
-	"version": "0.1.0",
-	"description": "OpenTelemetry integration for Resonate SDK in TypeScript. Provides tracing and observability for durable executions and workflows.",
-	"repository": {
-		"url": "https://github.com/resonatehq/resonate-opentelemetry-ts"
-	},
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
-	"keywords": [
-		"resonate",
-		"opentelemetry",
-		"observability",
-		"distributed-tracing",
-		"durable-execution",
-		"workflow",
-		"telemetry",
-		"tracing",
-		"logging",
-		"resonatehq"
-	],
-	"scripts": {
-		"build": "tsc",
-		"check": "npx @biomejs/biome check",
-		"fmt": "npx @biomejs/biome check --write",
-		"type-check": "npx tsc --noEmit"
-	},
-	"devDependencies": {
-		"@biomejs/biome": "2.2.6",
-		"@types/bun": "latest",
-		"@resonatehq/sdk": "^0.8.4",
-		"open": "^10.2.0"
-	},
-	"peerDependencies": {
-		"typescript": "^5.9.3"
-	},
-	"dependencies": {
-		"@opentelemetry/api": "^1.9.0"
-	}
+  "name": "@resonatehq/opentelemetry",
+  "version": "0.1.1",
+  "description": "OpenTelemetry integration for Resonate SDK in TypeScript. Provides tracing and observability for durable executions and workflows.",
+  "repository": {
+    "url": "https://github.com/resonatehq/resonate-opentelemetry-ts"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "resonate",
+    "opentelemetry",
+    "observability",
+    "distributed-tracing",
+    "durable-execution",
+    "workflow",
+    "telemetry",
+    "tracing",
+    "logging",
+    "resonatehq"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "check": "npx @biomejs/biome check",
+    "fmt": "npx @biomejs/biome check --write",
+    "type-check": "npx tsc --noEmit"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.6",
+    "@types/bun": "latest",
+    "@resonatehq/sdk": "^0.8.4",
+    "open": "^10.2.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@opentelemetry/api": "^1.9.0"
+  }
 }
